@@ -1,8 +1,10 @@
 # stores_project
 Создание отчета по работе сети магазинов
+
 Исходные данные: 
 Справочники - файлы CSV: 'coupons.csv' - купоны, 'promos.csv' - данные о промоакциях, 'promo_types.csv' - типы промоакций, 'stores.scv' - список магазинов сети
 Таблицы фактов - таблицы базы Postgres: 'bills_head' - чеки, 'bills_item' - данные по чекам, 'traffic' - трафик
+
 Шаги:
 1. Функция 'f_full_load_ip' (на plpgsql, тип загрузки full) для загрузки данных из файлов CSV через протокол gpfdist в Greenplum
 2. Функции 'f_bills' и 'f_traffic' (на plpgsql, тип загрузки Delta partition) для загрузки данных из таблиц базы Postgres через протокол pxf в Greenplum
